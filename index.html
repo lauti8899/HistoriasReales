@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historia de Amor - Lourdes y Alma</title>
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2 {
+      color: #c71585;
+      text-align: center;
+    }
+    .capitulo {
+      display: none;
+      background: #ffe4f2;
+      border: 2px solid #c71585;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 0 10px #c71585;
+    }
+    .capitulo.active {
+      display: block;
+    }
+    .botones {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      background-color: #c71585;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #a0136f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Historia de Amor - Lourdes y Alma</h1>
+  <h2>Capítulo <span id="numero">1</span>/10</h2>
+
+  <div id="cap1" class="capitulo active">
+    <p>Lourdes era una chica soñadora que siempre escribía poemas en su cuaderno. Alma, en cambio, era más reservada, pero observaba a Lourdes desde lejos, cautivada por su forma de ver el mundo.</p>
+  </div>
+
+  <div id="cap2" class="capitulo">
+    <p>Un día en el club, Emma organizó una salida al parque. Lourdes y Alma terminaron caminando juntas, hablando de libros, música y del amor. Se sintieron mágicamente conectadas.</p>
+  </div>
+
+  <div id="cap3" class="capitulo">
+    <p>Lucila, la más bromista del grupo, notó lo que pasaba entre ellas y comenzó a hacer comentarios graciosos. Las chicas se sonrojaban, pero no lo negaban.</p>
+  </div>
+
+  <div id="cap4" class="capitulo">
+    <p>En una tarde lluviosa, Alma se animó a escribirle una carta a Lourdes. Fue directa, sincera y llena de emoción. Lourdes lloró de felicidad al leerla.</p>
+  </div>
+
+  <div id="cap5" class="capitulo">
+    <p>Valentina y Eli prepararon una merienda sorpresa para todo el grupo. Cuando Lourdes y Alma llegaron tomadas de la mano, todas gritaron de alegría. ¡Se había formado una pareja hermosa!</p>
+  </div>
+
+  <div id="cap6" class="capitulo">
+    <p>Lourdes y Alma se convirtieron en el alma del grupo. Compartían canciones, películas, secretos… y muchos besos bajo la luna.</p>
+  </div>
+
+  <div id="cap7" class="capitulo">
+    <p>Un día tuvieron su primera discusión, pero aprendieron a hablar, a escucharse y a perdonarse. El amor verdadero también se construye con paciencia.</p>
+  </div>
+
+  <div id="cap8" class="capitulo">
+    <p>Emma escribió una canción para ellas y se la cantó en una noche de estrellas. Todas se emocionaron, y Lourdes abrazó fuerte a Alma.</p>
+  </div>
+
+  <div id="cap9" class="capitulo">
+    <p>Lucila organizó un picnic arcoíris en el parque. Fue un día lleno de abrazos, selfies, flores y palabras de amor. Lourdes le dijo a Alma: "Gracias por elegirme".</p>
+  </div>
+
+  <div id="cap10" class="capitulo">
+    <p>Pasó el tiempo, pero el grupo seguía unido. Lourdes y Alma seguían mirándose como el primer día. Porque cuando dos almas se encuentran… el amor florece para siempre.</p>
+  </div>
+
+  <div class="botones">
+    <button onclick="anterior()">Anterior</button>
+    <button onclick="siguiente()">Siguiente</button>
+  </div>
+
+  <script>
+    let capActual = 1;
+    const totalCapitulos = 10;
+
+    function mostrarCapitulo() {
+      for (let i = 1; i <= totalCapitulos; i++) {
+        document.getElementById("cap" + i).classList.remove("active");
+      }
+      document.getElementById("cap" + capActual).classList.add("active");
+      document.getElementById("numero").innerText = capActual;
+    }
+
+    function siguiente() {
+      if (capActual < totalCapitulos) {
+        capActual++;
+        mostrarCapitulo();
+      }
+    }
+
+    function anterior() {
+      if (capActual > 1) {
+        capActual--;
+        mostrarCapitulo();
+      }
+    }
+  </script>
+
+</body>
+</html>
